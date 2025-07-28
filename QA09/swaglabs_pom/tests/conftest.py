@@ -4,7 +4,6 @@ from playwright.sync_api import sync_playwright, expect
 from QA09.swaglabs_pom.pages.login_page import loginPage
 from QA09.swaglabs_pom.pages.products_page import productPage
 
-
 @pytest.fixture()
 def setup_swaglabs():
     print("### Test start ###")
