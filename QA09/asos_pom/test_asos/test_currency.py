@@ -1,4 +1,4 @@
-
+# A test to verify currency updates the prices to selected currency
 
 class TestCurrency:
 
