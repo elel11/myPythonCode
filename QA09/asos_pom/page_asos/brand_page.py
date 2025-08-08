@@ -13,13 +13,20 @@ class brandPage:
         brand_button.click()
         asos_maternity_link = self.page.get_by_text("ASOS Maternity")                  # click on "ASOS MATERNITY" button
         asos_maternity_link.click()
-        asos_maternity_description = self.page.query_selector_all("[class= 'productDescription_sryaw']")      # upload all the item by
-        descriptions = asos_maternity_description                                                             # the same title
+        self.page.wait_for_selector(".productDescription_sryaw")                       #  waiting for titles to upload
+        asos_maternity_description = self.page.locator("[class= productDescription_sryaw]")    # uploading all items by that title
+        count = asos_maternity_description.count()
+        print("found", count, "items")                                                 # print all items found
+        descriptions = asos_maternity_description
+        expected = "asos design maternity"
         all_match = True
-        for description in descriptions:
-            text = description.text_content()
+        for i in range(count):                                                         # getting all the titles and inspect them
+            description = asos_maternity_description.nth(i)
+            text = description.text_content().lower()
             print(text)
-            if "ASOS DESIGN Maternity" not in text:                                     # if: the title not in one of the
+            if expected not in text:
+                all_match = False
+            if expected not in text:                                                    # if: the title not in one of the
                 all_match = False                                                       # titles = get assertion
 
         if all_match:
