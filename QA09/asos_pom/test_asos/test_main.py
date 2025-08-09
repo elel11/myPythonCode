@@ -1,7 +1,7 @@
 # A test to verify only the items I requested uploaded
 
 
-from QA09.asos_pom.page_asos.globals import SEARCH_ON_SEARCH_BAR, SEARCH_ON_SEARCH_BAR_2, FAKE_SEARCH_ON_SEARCH_BAR
+from QA09.asos_pom.test_asos.globals import SEARCH_ON_SEARCH_BAR, SEARCH_ON_SEARCH_BAR_2, FAKE_SEARCH_ON_SEARCH_BAR
 
 
 class TestMain():
