@@ -3,20 +3,20 @@ class brandPage:
         self.page = page
 
     def brand_test(self):
-        women_button = self.page.locator("[id= 'women-floor']")                         # click on "woman" button
+        women_button = self.page.locator("[id= 'women-floor']")
         women_button.click()
-        sale_button = self.page.get_by_role("button", name="Sale")                      # click on "sale" button
+        sale_button = self.page.get_by_role("button", name="Sale")
         sale_button.click()
-        size_12_button = self.page.get_by_text("Size 12")                              # click on "size 12" button
+        size_12_button = self.page.get_by_text("Size 12")
         size_12_button.click()
-        brand_button = self.page.get_by_role("button", name="Brand")                   # click on "brand" button
+        brand_button = self.page.get_by_role("button", name="Brand")
         brand_button.click()
-        asos_maternity_link = self.page.get_by_text("ASOS Maternity")                  # click on "ASOS MATERNITY" button
+        asos_maternity_link = self.page.get_by_text("ASOS Maternity")
         asos_maternity_link.click()
         self.page.wait_for_selector(".productDescription_sryaw")                       #  waiting for titles to upload
-        asos_maternity_description = self.page.locator("[class= productDescription_sryaw]")    # uploading all items by that title
+        asos_maternity_description = self.page.locator("[class= productDescription_sryaw]")
         count = asos_maternity_description.count()
-        print("found", count, "items")                                                 # print all items found
+        print("found", count, "items")
         descriptions = asos_maternity_description
         expected = "asos design maternity"
         all_match = True

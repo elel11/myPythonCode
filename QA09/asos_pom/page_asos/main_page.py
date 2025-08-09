@@ -6,13 +6,13 @@ class mainPage:
         self.page = page
 
     def verify_titles(self, text):
-        search_bar = self.page.locator("[id= 'chrome-search']")                       # insert wanted request in search bar
+        search_bar = self.page.locator("[id= 'chrome-search']")
         search_bar.fill(text)
         search_button = self.page.get_by_role("img", name="search")
         search_button.click()
-        titles = self.page.query_selector_all("[class='productDescription_sryaw']")   # uploading all items by that title
+        titles = self.page.query_selector_all("[class='productDescription_sryaw']")
         self.page.wait_for_timeout(3000)                                              # wait for the result to come up
-        titles = titles[:5]                                                           # returning only the first 5 results
+        titles = titles[:5]
         if not titles:                                                                # if: no results = assertion
             raise AssertionError(f" no title were found '{text}'")
         text = text.lower()                                                           # returning result as singular or plurals
